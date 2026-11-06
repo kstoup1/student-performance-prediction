@@ -1,1 +1,1 @@
-# tudent-performance-prediction
+# Student-performance-prediction
