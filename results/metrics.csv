@@ -1,0 +1,6 @@
+Model,AccuracyPercent,FailRecall,FailPrecision,ROCArea,FailCorrect,FailMissed,PassFlaggedFail,PassCorrect
+Always-Pass baseline,67.1,0,,0.500,0,130,0,265
+J48 Without Grades,66.3291,0.369,0.485,0.572,48,82,51,214
+Logistic Without Grades,68.6076,0.369,0.533,0.672,48,82,42,223
+J48 With G1,84.3038,0.777,0.754,0.820,101,29,33,232
+Logistic With G1,84.3038,0.769,0.758,0.921,100,30,32,233
