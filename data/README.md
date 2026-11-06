@@ -17,4 +17,4 @@ Please refer to the UCI page for the dataset's license and terms of use.
 
 **Label:** `PassFail` = `Pass` if G3 ≥ 10, otherwise `Fail` (265 Pass, 130 Fail). G3 was removed after the label was created. All 395 labels were checked for consistency during the project.
 
-> **Note:** The team's prepared CSV files will be added to this folder from the original project files. They have not been recreated or approximated. Until then, they can be rebuilt from the UCI source using the steps in the main [README](../README.md#how-to-reproduce).
+Both files in this folder are the team's original prepared files exactly as loaded into WEKA (395 rows each; 265 Pass, 130 Fail). They are derived from the UCI dataset and shared with attribution to its authors.

@@ -74,7 +74,7 @@ G2 was excluded from both sets so that the "with G1" model reflects only informa
 
 ## Results
 
-All figures below are copied from the team's saved WEKA outputs. Nothing was retrained or recalculated for this repository. The raw values are in [`results/metrics.csv`](results/metrics.csv).
+All figures below are copied from the team's saved WEKA outputs. Nothing was retrained or recalculated for this repository. The summary values are in [`results/metrics.csv`](results/metrics.csv), and the complete, unedited WEKA output for each run is in [`results/weka-output/`](results/weka-output/).
 
 | Configuration | Accuracy | Fail recall | Fail precision | ROC AUC | Failing students identified |
 |---|---:|---:|---:|---:|---:|
@@ -103,6 +103,17 @@ Confusion matrices from WEKA (rows = actual class, columns = predicted class):
 | J48 — with G1 | 101 | 29 | 33 | 232 |
 | Logistic — with G1 | 100 | 30 | 32 | 233 |
 
+<details>
+<summary><b>WEKA screenshots for all four runs</b></summary>
+
+| J48 — without grades | Logistic — without grades |
+|---|---|
+| ![J48 without grades](figures/weka-screenshots/J48_Without_Grades.png) | ![Logistic without grades](figures/weka-screenshots/Logistic_Without_Grades.png) |
+| **J48 — with G1** | **Logistic — with G1** |
+| ![J48 with G1](figures/weka-screenshots/J48_With_G1.png) | ![Logistic with G1](figures/weka-screenshots/Logistic_With_G1.png) |
+
+</details>
+
 A **missed** student (actual Fail predicted as Pass) is the most important error here, because that student would not be flagged for support. Even the best configurations still missed 29–30 of the 130 failing students.
 
 ## Key findings
@@ -130,6 +141,8 @@ A **missed** student (actual Fail predicted as Pass) is the most important error
 
 ## How to reproduce
 
+The prepared datasets are included in [`data/`](data/), so you can skip to step 4. To rebuild them from scratch:
+
 1. Download the [UCI Student Performance dataset](https://archive.ics.uci.edu/dataset/320/student+performance) and open the **mathematics** file (`student-mat.csv`, semicolon-separated).
 2. In Excel, add a nominal `PassFail` column: `Pass` if G3 ≥ 10, otherwise `Fail`. Convert it to fixed values, then remove G3.
 3. Save two CSVs: one without G1/G2/G3, and one with G1 but without G2/G3. Keep all 30 non-grade attributes, including `school`.
@@ -140,17 +153,22 @@ A **missed** student (actual Fail predicted as Pass) is the most important error
 
 ```
 student-performance-prediction/
-├── README.md                  Project overview (this file)
+├── README.md                     Project overview (this file)
 ├── data/
-│   └── README.md              Dataset source and prepared-file descriptions
-├── docs/
-│   ├── TEAM.md                Team members and contributions
-│   └── RESUME_ENTRY.md        Resume wording for the project
-└── results/
-    ├── metrics.csv            Final metrics for all configurations
-    └── charts/
-        ├── accuracy.svg
-        └── failing_students_identified.svg
+│   ├── README.md                 Dataset source, label definition, file descriptions
+│   ├── Student_Without_Grades.csv
+│   └── Student_With_G1.csv
+├── results/
+│   ├── metrics.csv               Summary metrics for all configurations
+│   ├── charts/                   Accuracy and failing-student comparison charts
+│   └── weka-output/              Full, unedited WEKA output for each of the four runs
+├── figures/
+│   └── weka-screenshots/         WEKA Explorer screenshots of each run
+├── reports/
+│   └── Stoup_Ball_MidReport.pdf  Mid-project report
+└── docs/
+    ├── TEAM.md                   Team members and contributions
+    └── RESUME_ENTRY.md           Resume wording for the project
 ```
 
 ## Team

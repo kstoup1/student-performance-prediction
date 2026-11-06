@@ -1,0 +1,138 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     Student_Without_Grades
+Instances:    395
+Attributes:   31
+              school
+              sex
+              age
+              address
+              famsize
+              Pstatus
+              Medu
+              Fedu
+              Mjob
+              Fjob
+              reason
+              guardian
+              traveltime
+              studytime
+              failures
+              schoolsup
+              famsup
+              paid
+              activities
+              nursery
+              higher
+              internet
+              romantic
+              famrel
+              freetime
+              goout
+              Dalc
+              Walc
+              health
+              absences
+              PassFail
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+failures <= 0
+|   schoolsup = yes
+|   |   nursery = yes
+|   |   |   goout <= 1: Pass (4.0)
+|   |   |   goout > 1
+|   |   |   |   freetime <= 2: Fail (5.0)
+|   |   |   |   freetime > 2
+|   |   |   |   |   Mjob = at_home: Fail (3.0)
+|   |   |   |   |   Mjob = health: Fail (0.0)
+|   |   |   |   |   Mjob = other
+|   |   |   |   |   |   famsize = GT3: Pass (7.0/1.0)
+|   |   |   |   |   |   famsize = LE3: Fail (4.0/1.0)
+|   |   |   |   |   Mjob = services
+|   |   |   |   |   |   famsize = GT3
+|   |   |   |   |   |   |   age <= 15
+|   |   |   |   |   |   |   |   Dalc <= 1: Fail (3.0/1.0)
+|   |   |   |   |   |   |   |   Dalc > 1: Pass (2.0)
+|   |   |   |   |   |   |   age > 15: Fail (2.0)
+|   |   |   |   |   |   famsize = LE3: Pass (3.0)
+|   |   |   |   |   Mjob = teacher: Fail (2.0)
+|   |   nursery = no: Pass (5.0)
+|   schoolsup = no
+|   |   guardian = mother
+|   |   |   higher = yes
+|   |   |   |   absences <= 16: Pass (188.0/38.0)
+|   |   |   |   absences > 16
+|   |   |   |   |   famsize = GT3
+|   |   |   |   |   |   health <= 4: Fail (3.0/1.0)
+|   |   |   |   |   |   health > 4: Pass (3.0)
+|   |   |   |   |   famsize = LE3: Fail (4.0)
+|   |   |   higher = no: Fail (3.0)
+|   |   guardian = father: Pass (61.0/7.0)
+|   |   guardian = other
+|   |   |   paid = no: Pass (5.0/1.0)
+|   |   |   paid = yes: Fail (5.0)
+failures > 0
+|   famrel <= 3: Fail (21.0/4.0)
+|   famrel > 3
+|   |   school = GP
+|   |   |   Pstatus = A: Pass (5.0/1.0)
+|   |   |   Pstatus = T
+|   |   |   |   goout <= 2: Pass (11.0/1.0)
+|   |   |   |   goout > 2
+|   |   |   |   |   higher = yes
+|   |   |   |   |   |   Walc <= 4
+|   |   |   |   |   |   |   failures <= 1
+|   |   |   |   |   |   |   |   freetime <= 4
+|   |   |   |   |   |   |   |   |   address = U
+|   |   |   |   |   |   |   |   |   |   Dalc <= 1
+|   |   |   |   |   |   |   |   |   |   |   traveltime <= 1: Pass (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   traveltime > 1: Fail (2.0)
+|   |   |   |   |   |   |   |   |   |   Dalc > 1: Fail (7.0/1.0)
+|   |   |   |   |   |   |   |   |   address = R: Fail (3.0)
+|   |   |   |   |   |   |   |   freetime > 4: Pass (2.0)
+|   |   |   |   |   |   |   failures > 1: Fail (6.0)
+|   |   |   |   |   |   Walc > 4: Pass (2.0)
+|   |   |   |   |   higher = no: Fail (5.0)
+|   |   school = MS
+|   |   |   nursery = yes: Fail (7.0)
+|   |   |   nursery = no
+|   |   |   |   traveltime <= 1: Fail (2.0)
+|   |   |   |   traveltime > 1: Pass (2.0)
+
+Number of Leaves  : 	34
+
+Size of the tree : 	63
+
+
+Time taken to build model: 0.04 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         262               66.3291 %
+Incorrectly Classified Instances       133               33.6709 %
+Kappa statistic                          0.1882
+Mean absolute error                      0.3865
+Root mean squared error                  0.5351
+Relative absolute error                 87.4549 %
+Root relative squared error            113.8802 %
+Total Number of Instances              395
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.369    0.192    0.485      0.369    0.419      0.192    0.572     0.399     Fail
+                 0.808    0.631    0.723      0.808    0.763      0.192    0.572     0.693     Pass
+Weighted Avg.    0.663    0.487    0.645      0.663    0.650      0.192    0.572     0.596
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  48  82 |   a = Fail
+  51 214 |   b = Pass

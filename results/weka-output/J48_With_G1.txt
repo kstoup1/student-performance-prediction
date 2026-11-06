@@ -1,0 +1,126 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     Student_With_G1
+Instances:    395
+Attributes:   32
+              school
+              sex
+              age
+              address
+              famsize
+              Pstatus
+              Medu
+              Fedu
+              Mjob
+              Fjob
+              reason
+              guardian
+              traveltime
+              studytime
+              failures
+              schoolsup
+              famsup
+              paid
+              activities
+              nursery
+              higher
+              internet
+              romantic
+              famrel
+              freetime
+              goout
+              Dalc
+              Walc
+              health
+              absences
+              G1
+              PassFail
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+G1 <= 10
+|   G1 <= 7
+|   |   schoolsup = yes
+|   |   |   goout <= 3
+|   |   |   |   failures <= 0
+|   |   |   |   |   studytime <= 3: Pass (3.0/1.0)
+|   |   |   |   |   studytime > 3: Fail (3.0)
+|   |   |   |   failures > 0: Pass (3.0)
+|   |   |   goout > 3: Fail (7.0)
+|   |   schoolsup = no: Fail (54.0/2.0)
+|   G1 > 7
+|   |   age <= 18
+|   |   |   absences <= 17
+|   |   |   |   romantic = no
+|   |   |   |   |   school = GP
+|   |   |   |   |   |   Pstatus = A: Pass (5.0)
+|   |   |   |   |   |   Pstatus = T
+|   |   |   |   |   |   |   Fjob = teacher: Pass (2.0)
+|   |   |   |   |   |   |   Fjob = other
+|   |   |   |   |   |   |   |   schoolsup = yes: Pass (5.0)
+|   |   |   |   |   |   |   |   schoolsup = no
+|   |   |   |   |   |   |   |   |   Medu <= 1: Pass (6.0)
+|   |   |   |   |   |   |   |   |   Medu > 1
+|   |   |   |   |   |   |   |   |   |   internet = no: Fail (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   internet = yes
+|   |   |   |   |   |   |   |   |   |   |   age <= 15: Pass (6.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 15
+|   |   |   |   |   |   |   |   |   |   |   |   studytime <= 1: Pass (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   studytime > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   paid = no: Pass (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   paid = yes: Fail (5.0)
+|   |   |   |   |   |   |   Fjob = services
+|   |   |   |   |   |   |   |   health <= 4
+|   |   |   |   |   |   |   |   |   studytime <= 1: Pass (4.0/1.0)
+|   |   |   |   |   |   |   |   |   studytime > 1: Fail (5.0)
+|   |   |   |   |   |   |   |   health > 4: Pass (6.0)
+|   |   |   |   |   |   |   Fjob = health: Fail (3.0)
+|   |   |   |   |   |   |   Fjob = at_home: Fail (3.0/1.0)
+|   |   |   |   |   school = MS: Pass (5.0)
+|   |   |   |   romantic = yes
+|   |   |   |   |   G1 <= 9
+|   |   |   |   |   |   paid = no: Fail (11.0)
+|   |   |   |   |   |   paid = yes
+|   |   |   |   |   |   |   Fedu <= 1: Pass (3.0)
+|   |   |   |   |   |   |   Fedu > 1: Fail (4.0)
+|   |   |   |   |   G1 > 9: Pass (18.0/6.0)
+|   |   |   absences > 17: Fail (8.0)
+|   |   age > 18: Fail (10.0)
+G1 > 10: Pass (202.0/5.0)
+
+Number of Leaves  : 	27
+
+Size of the tree : 	50
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         333               84.3038 %
+Incorrectly Classified Instances        62               15.6962 %
+Kappa statistic                          0.6473
+Mean absolute error                      0.1824
+Root mean squared error                  0.3669
+Relative absolute error                 41.2739 %
+Root relative squared error             78.0845 %
+Total Number of Instances              395
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.777    0.125    0.754      0.777    0.765      0.647    0.820     0.696     Fail
+                 0.875    0.223    0.889      0.875    0.882      0.647    0.820     0.837     Pass
+Weighted Avg.    0.843    0.191    0.844      0.843    0.844      0.647    0.820     0.791
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 101  29 |   a = Fail
+  33 232 |   b = Pass

@@ -1,0 +1,170 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     Student_With_G1
+Instances:    395
+Attributes:   32
+              school
+              sex
+              age
+              address
+              famsize
+              Pstatus
+              Medu
+              Fedu
+              Mjob
+              Fjob
+              reason
+              guardian
+              traveltime
+              studytime
+              failures
+              schoolsup
+              famsup
+              paid
+              activities
+              nursery
+              higher
+              internet
+              romantic
+              famrel
+              freetime
+              goout
+              Dalc
+              Walc
+              health
+              absences
+              G1
+              PassFail
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                       Class
+Variable                Fail
+============================
+school=MS            -1.7489
+sex=M                 0.5182
+age                   0.7259
+address=R             0.6338
+famsize=LE3            0.374
+Pstatus=T              1.092
+Medu                 -0.2525
+Fedu                  0.2271
+Mjob=at_home         -0.5237
+Mjob=health           0.4629
+Mjob=other           -0.4077
+Mjob=services        -0.4145
+Mjob=teacher          1.6254
+Fjob=teacher         -0.4697
+Fjob=other           -0.9122
+Fjob=services         0.4086
+Fjob=health           2.0375
+Fjob=at_home          1.8015
+reason=course         0.7981
+reason=other         -0.6133
+reason=home          -0.4022
+reason=reputation     -0.278
+guardian=mother      -0.0852
+guardian=father       -0.329
+guardian=other        1.0216
+traveltime            0.2334
+studytime             0.3836
+failures              0.2116
+schoolsup=no         -0.0703
+famsup=yes            0.3919
+paid=yes             -0.5672
+activities=yes        0.0514
+nursery=no           -0.3944
+higher=no            -0.5365
+internet=yes         -1.2975
+romantic=yes          1.9599
+famrel               -0.6532
+freetime              0.3122
+goout                 0.4307
+Dalc                  0.2255
+Walc                 -0.7549
+health                0.2016
+absences              0.0607
+G1                   -1.6348
+Intercept             1.5808
+
+
+Odds Ratios...
+                       Class
+Variable                Fail
+============================
+school=MS              0.174
+sex=M                  1.679
+age                   2.0666
+address=R             1.8847
+famsize=LE3           1.4536
+Pstatus=T             2.9803
+Medu                  0.7769
+Fedu                  1.2549
+Mjob=at_home          0.5923
+Mjob=health           1.5886
+Mjob=other            0.6652
+Mjob=services         0.6606
+Mjob=teacher          5.0803
+Fjob=teacher          0.6252
+Fjob=other            0.4016
+Fjob=services         1.5048
+Fjob=health           7.6716
+Fjob=at_home          6.0589
+reason=course         2.2213
+reason=other          0.5415
+reason=home           0.6688
+reason=reputation     0.7573
+guardian=mother       0.9184
+guardian=father       0.7196
+guardian=other        2.7777
+traveltime            1.2629
+studytime             1.4676
+failures              1.2357
+schoolsup=no          0.9321
+famsup=yes            1.4799
+paid=yes              0.5671
+activities=yes        1.0528
+nursery=no            0.6741
+higher=no             0.5848
+internet=yes          0.2732
+romantic=yes          7.0987
+famrel                0.5204
+freetime              1.3664
+goout                 1.5384
+Dalc                  1.2529
+Walc                  0.4701
+health                1.2234
+absences              1.0626
+G1                     0.195
+
+
+Time taken to build model: 0.05 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         333               84.3038 %
+Incorrectly Classified Instances        62               15.6962 %
+Kappa statistic                          0.6459
+Mean absolute error                      0.1798
+Root mean squared error                  0.3353
+Relative absolute error                 40.6935 %
+Root relative squared error             71.3664 %
+Total Number of Instances              395
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.769    0.121    0.758      0.769    0.763      0.646    0.921     0.837     Fail
+                 0.879    0.231    0.886      0.879    0.883      0.646    0.921     0.963     Pass
+Weighted Avg.    0.843    0.195    0.844      0.843    0.843      0.646    0.921     0.921
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 100  30 |   a = Fail
+  32 233 |   b = Pass
