@@ -1,14 +1,20 @@
-# Data files
+# Data
 
-This project used the publicly available UCI Student Performance **mathematics** dataset (395 Portuguese secondary-school student records).
+This project used the publicly available **UCI Student Performance** dataset, mathematics subset: 395 student records from two Portuguese secondary schools.
 
-The two cleaned datasets used in WEKA are:
+- **Source:** https://archive.ics.uci.edu/dataset/320/student+performance
+- **Original file:** `student-mat.csv` (semicolon-separated, 33 attributes: 30 non-grade attributes plus grades G1, G2, G3)
+- **Citation:** P. Cortez and A. Silva, *Using Data Mining to Predict Secondary School Student Performance*, FUBUTEC 2008, pp. 5–12.
 
-- `Student_Without_Grades.csv`: 30 non-grade characteristics and PassFail (31 WEKA attributes). Excludes G1/G2/G3.
-- `Student_With_G1.csv`: same 30 characteristics plus G1 and PassFail (32 WEKA attributes). Excludes G2/G3.
+Please refer to the UCI page for the dataset's license and terms of use.
 
-**These exact CSV files are not currently uploaded to this repository.** We did not recreate them without the original prepared files. To add them later, upload the originals directly to this folder after reviewing the dataset terms and any school-specific publication requirements.
+## Prepared files used in WEKA
 
-Source: https://archive.ics.uci.edu/dataset/320/student+performance
+| File | Contents | WEKA attributes |
+|---|---|---|
+| `Student_Without_Grades.csv` | 30 non-grade attributes + `PassFail` (G1, G2, G3 removed) | 31 |
+| `Student_With_G1.csv` | 30 non-grade attributes + G1 + `PassFail` (G2, G3 removed) | 32 |
 
-PassFail definition: Pass for G3 ≥ 10; Fail otherwise. All 395 records and labels were checked for consistency during the project.
+**Label:** `PassFail` = `Pass` if G3 ≥ 10, otherwise `Fail` (265 Pass, 130 Fail). G3 was removed after the label was created. All 395 labels were checked for consistency during the project.
+
+> **Note:** The team's prepared CSV files will be added to this folder from the original project files. They have not been recreated or approximated. Until then, they can be rebuilt from the UCI source using the steps in the main [README](../README.md#how-to-reproduce).

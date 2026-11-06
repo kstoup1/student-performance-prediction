@@ -1,10 +1,23 @@
-# Team and individual contributions
+# Team and contributions
 
-**Konley Stoup and Camden Ball** collaborated on this Auburn University COMP 1100 final project. The division of work was intended to be approximately 50/50.
+**Konley Stoup** and **Camden Ball** completed this project together for COMP 1100 at Auburn University (Fall 2026), with an approximately equal division of work. Both teammates contributed to the final project and understand the models and findings.
 
-- **Konley Stoup:** project research and planning, Excel data preparation and checks, WEKA classifier setup and model runs, evaluation and metrics interpretation, charts, final report, poster, and presentation.
-- **Camden Ball:** research and planning, Excel data review and validation, review of WEKA experiments, error analysis, preparation and organization of the mid-project report, charts, final report, poster, and presentation.
+## Konley Stoup
 
-Both contributed to the final project and were expected to understand the models and findings. This outline is based on the team's described division of labor and should be confirmed by both teammates before using it as a formal individual-contribution statement.
+- Project research and planning
+- Excel data preparation and consistency checks
+- WEKA classifier setup and model runs for all four configurations
+- Evaluation and interpretation of accuracy, Fail recall, precision, and ROC AUC
+- Charts, final report, poster, and presentation
 
-The models were trained using WEKA, not software code authored by the team. ChatGPT and Claude assisted with planning, troubleshooting, and written communication.
+## Camden Ball
+
+- Project research and planning
+- Excel data review and validation
+- Review of the WEKA experiments and confusion-matrix error analysis
+- Preparation and organization of the mid-project report
+- Charts, final report, poster, and presentation
+
+## Tools and assistance
+
+Models were built and evaluated in **WEKA 3.8.6** using its graphical interface; data was prepared in **Microsoft Excel**. The team did not write model code. ChatGPT and Claude were used for planning, troubleshooting, and written communication.
